@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Collection:
+  = @due.collection_id
+%p
+  %b Max:
+  = @due.max
+%p
+  %b Reg:
+  = @due.reg
+%p
+  %b Min:
+  = @due.min
+%p
+  %b Sub:
+  = @due.sub
+
+= link_to 'Edit', edit_due_path(@due)
+\|
+= link_to 'Back', dues_path

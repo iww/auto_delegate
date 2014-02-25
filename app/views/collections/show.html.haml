@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @collection.user_id
+%p
+  %b Member:
+  = @collection.member_id
+%p
+  %b Start date:
+  = @collection.start_date
+%p
+  %b End date:
+  = @collection.end_date
+%p
+  %b Initial fees:
+  = @collection.initial_fees
+
+= link_to 'Edit', edit_collection_path(@collection)
+\|
+= link_to 'Back', collections_path

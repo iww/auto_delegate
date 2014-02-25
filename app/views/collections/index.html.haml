@@ -1,0 +1,27 @@
+%h1 Listing collections
+
+%table
+  %tr
+    %th User
+    %th Member
+    %th Start date
+    %th End date
+    %th Initial fees
+    %th
+    %th
+    %th
+
+  - @collections.each do |collection|
+    %tr
+      %td= collection.user_id
+      %td= collection.member_id
+      %td= collection.start_date
+      %td= collection.end_date
+      %td= collection.initial_fees
+      %td= link_to 'Show', collection
+      %td= link_to 'Edit', edit_collection_path(collection)
+      %td= link_to 'Destroy', collection, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Collection', new_collection_path

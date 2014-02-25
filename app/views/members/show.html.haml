@@ -1,0 +1,60 @@
+%p#notice= notice
+
+%p
+  %b First name:
+  = @member.first_name
+%p
+  %b Last name:
+  = @member.last_name
+%p
+  %b Address1:
+  = @member.address1
+%p
+  %b Address2:
+  = @member.address2
+%p
+  %b City:
+  = @member.city
+%p
+  %b State:
+  = @member.state
+%p
+  %b Postal code:
+  = @member.postal_code
+%p
+  %b Country:
+  = @member.country
+%p
+  %b Email:
+  = @member.email
+%p
+  %b Telephone:
+  = @member.telephone
+%p
+  %b Employer:
+  = @member.employer
+%p
+  %b Occupation:
+  = @member.occupation
+%p
+  %b Mail iw:
+  = @member.mail_iw
+%p
+  %b General defense:
+  = @member.general_defense
+%p
+  %b Initiated at:
+  = @member.initiated_at
+%p
+  %b Member number:
+  = @member.member_number
+%p
+  %b Industrial union:
+  = @member.industrial_union
+%p
+  %b User:
+  = @member.user_id
+
+= link_to 'Edit', edit_member_path(@member)
+\|
+= link_to 'Back', members_path

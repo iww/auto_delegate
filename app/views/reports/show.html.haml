@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Start date:
+  = @report.start_date
+%p
+  %b End date:
+  = @report.end_date
+
+= link_to 'Edit', edit_report_path(@report)
+\|
+= link_to 'Back', reports_path

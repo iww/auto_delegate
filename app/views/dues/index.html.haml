@@ -1,0 +1,27 @@
+%h1 Listing dues
+
+%table
+  %tr
+    %th Collection
+    %th Max
+    %th Reg
+    %th Min
+    %th Sub
+    %th
+    %th
+    %th
+
+  - @dues.each do |due|
+    %tr
+      %td= due.collection_id
+      %td= due.max
+      %td= due.reg
+      %td= due.min
+      %td= due.sub
+      %td= link_to 'Show', due
+      %td= link_to 'Edit', edit_due_path(due)
+      %td= link_to 'Destroy', due, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Due', new_due_path

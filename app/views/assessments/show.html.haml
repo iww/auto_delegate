@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Assessment type:
+  = @assessment.assessment_type
+%p
+  %b Amount:
+  = @assessment.amount
+%p
+  %b Collection:
+  = @assessment.collection_id
+
+= link_to 'Edit', edit_assessment_path(@assessment)
+\|
+= link_to 'Back', assessments_path

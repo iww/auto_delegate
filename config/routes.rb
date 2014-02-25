@@ -1,4 +1,15 @@
 AutoDelegate::Application.routes.draw do
+  resources :reports
+
+  devise_for :users
+  resources :dues
+
+  resources :assessments
+
+  resources :members
+
+  resources :collections
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
