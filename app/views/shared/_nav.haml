@@ -1,0 +1,14 @@
+%header
+  %nav.navbar.navbar-default(role="navigation")
+    .navbar-header
+      %button.navbar-toggle(type="button" data-toggle="collapse" data-target="#navbar-collapse")
+        %span.sr-only Toggle Navigation
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      = link_to "NYC GMB Reports", root_url, :class => 'navbar-brand'
+
+    #navbar-collapse.collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        %li= link_to "Reports", reports_path
+        %li= link_to "Collections", collections_path

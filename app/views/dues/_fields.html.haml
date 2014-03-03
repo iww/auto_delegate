@@ -1,0 +1,17 @@
+.fields
+  .form-group
+    = f.label :max
+    = f.number_field :max
+  .form-group
+    = f.label :reg
+    = f.number_field :reg
+  .form-group
+    = f.label :min
+    = f.number_field :min
+  .form-group
+    = f.label :sub
+    = f.number_field :sub
+  - unless destroy == false
+    .form-group
+      = f.hidden_field :_destroy
+      %a.btn.btn-danger(href="#" data-remove='.fields') Remove

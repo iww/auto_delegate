@@ -6,20 +6,6 @@
         - @due.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
-    = f.label :collection_id
-    = f.number_field :collection_id
-  .field
-    = f.label :max
-    = f.number_field :max
-  .field
-    = f.label :reg
-    = f.number_field :reg
-  .field
-    = f.label :min
-    = f.number_field :min
-  .field
-    = f.label :sub
-    = f.number_field :sub
+  = render partial: 'fields', locals: { f: f }
   .actions
     = f.submit 'Save'

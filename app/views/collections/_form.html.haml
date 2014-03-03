@@ -1,25 +1,22 @@
 = form_for @collection do |f|
   - if @collection.errors.any?
-    #error_explanation
+    #error_explanation.alert.alert-danger
       %h2= "#{pluralize(@collection.errors.count, "error")} prohibited this collection from being saved:"
       %ul
         - @collection.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
-    = f.label :user_id
-    = f.number_field :user_id
-  .field
-    = f.label :member_id
-    = f.number_field :member_id
-  .field
-    = f.label :start_date
-    = f.datetime_select :start_date
-  .field
-    = f.label :end_date
-    = f.datetime_select :end_date
-  .field
-    = f.label :initial_fees
-    = f.number_field :initial_fees
-  .actions
-    = f.submit 'Save'
+  .form-group
+    = f.label :start_date, :class => 'control-label'
+    = f.datetime_select :start_date, :class => 'form-control'
+  .form-group
+    = f.label :end_date, :class => 'control-label'
+    = f.datetime_select :end_date, :class => 'form-control'
+  .form-group
+    = f.label :initial_fees, :class => 'control-label'
+    = f.number_field :initial_fees, :class => 'form-control'
+
+  = f.fields_for :dues do |due_fields|
+    = render partial: 'dues/fields', locals: { f: due_fields, destroy: true }
+  .form-group
+    = f.submit 'Save', :class => 'btn btn-primary'

@@ -1,27 +1,32 @@
-%h1 Listing collections
+%h1 Branch Collections
 
-%table
+%table.table.table-striped
   %tr
-    %th User
+    %th Delegate
+    %th I.U. Number
     %th Member
-    %th Start date
-    %th End date
+    %th Date Range
     %th Initial fees
-    %th
-    %th
-    %th
+    %th Dues
+    %th Assessments
+    %th Total
 
   - @collections.each do |collection|
     %tr
-      %td= collection.user_id
-      %td= collection.member_id
-      %td= collection.start_date
-      %td= collection.end_date
+      %td= link_to collection.user.full_name, user_path(collection.user)
+      %td= collection.member.industrial_union
+      %td
+        = link_to collection.member.full_name, member_path(collection.member)
+      %td
+        = collection.start_date
+        - if collection.end_date
+          &ndash; #{collection.end_date}
+
       %td= collection.initial_fees
-      %td= link_to 'Show', collection
-      %td= link_to 'Edit', edit_collection_path(collection)
-      %td= link_to 'Destroy', collection, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= link_to collection.total_dues, collection_path(collection)
+      %td= link_to collection.total_assessments, collection_path(collection)
+      %td= link_to collection.total, collection_path(collection)
 
 %br
 
-= link_to 'New Collection', new_collection_path
+= link_to 'New Collection Entry', new_collection_path, :class => 'btn btn-primary'
